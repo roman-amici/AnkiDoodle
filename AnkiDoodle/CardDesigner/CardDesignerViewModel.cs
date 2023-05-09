@@ -24,16 +24,6 @@ namespace AnkiDoodle.CardDesigner
 
         private Deck? DeckInfo { get; set; }
 
-        private long NextCardIndex()
-        {
-            if (DeckEdit == null || DeckEdit.Count == 0)
-            {
-                return 0;
-            }
-
-            return DeckEdit.Max(x => x.CardIndex) + 1;
-        }
-
         public event EventHandler? OnCardAdded;
 
         [RelayCommand]
@@ -44,7 +34,7 @@ namespace AnkiDoodle.CardDesigner
                 return;
             }
 
-            var card = new CardDesignBasic(NextCardIndex()) { TextFront = "<New Card>" };
+            var card = new CardDesignBasic() { TextFront = "<New Card>" };
             DeckEdit.Add(card);
             CurrentCard = card;
 
@@ -91,10 +81,8 @@ namespace AnkiDoodle.CardDesigner
             {
                 return;
             }
-            CurrentCard = null;
-            DeckEdit.Insert(newIndex, currentCard);
-            DeckEdit.RemoveAt(index + 1);
-            CurrentCard = currentCard;
+
+            DeckEdit.Move(index, newIndex);
         }
 
         [RelayCommand]
@@ -107,25 +95,14 @@ namespace AnkiDoodle.CardDesigner
 
             var currentCard = CurrentCard;
             var index = DeckEdit.IndexOf(currentCard);
+            var newIndex = index + 1;
 
-            if (index + 1 == DeckEdit.Count)
+            if (newIndex == DeckEdit.Count)
             {
                 return;
             }
 
-            var newIndex = index + 2;
-            CurrentCard = null;
-
-            if (newIndex == DeckEdit.Count)
-            {
-                DeckEdit.Add(currentCard);
-            }
-            else
-            {
-                DeckEdit.Insert(newIndex, currentCard);
-            }
-            DeckEdit.RemoveAt(index);
-            CurrentCard = currentCard;
+            DeckEdit.Move(index, newIndex);
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AnkiDoodle.Database;
 
 namespace AnkiDoodle
 {
@@ -23,6 +24,9 @@ namespace AnkiDoodle
         public MainWindow()
         {
             InitializeComponent();
+
+            var service = new DbService();
+            service.TestAdd().Wait();
         }
     }
 }

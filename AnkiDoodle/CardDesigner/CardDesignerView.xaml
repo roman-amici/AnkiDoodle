@@ -15,7 +15,7 @@
 
             <!-- Header -->
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="75">
-                <TextBlock Margin="15" FontSize="36" Text="{Binding DeckName}" />
+                <TextBox BorderThickness="0" Margin="15" FontSize="36" Text="{Binding DeckName}" />
             </StackPanel>
 
             <!-- Deck Sidebar -->
@@ -110,7 +110,15 @@
                     <TextBlock FontSize="18" Grid.Row="0" HorizontalAlignment="Center" >(Front)</TextBlock>
 
                     <Border BorderBrush="Black" BorderThickness="1"  Grid.Row="1">
-                        <TextBox x:Name="CardFrontTextBox" Margin="10" BorderThickness="0" FontSize="24" HorizontalContentAlignment="Center" VerticalAlignment="Center" Text="{Binding CurrentCard.TextFront}" />
+                        <TextBox 
+                            x:Name="CardFrontTextBox" 
+                            Margin="10" 
+                            BorderThickness="0" 
+                            FontSize="24" 
+                            HorizontalContentAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            Text="{Binding CurrentCard.TextFront}"
+                            TextWrapping="Wrap"/>
                     </Border>
                 </Grid>
 
@@ -123,7 +131,14 @@
                     <TextBlock FontSize="18" Grid.Row="0" HorizontalAlignment="Center" >(Back)</TextBlock>
 
                     <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1">
-                        <TextBox  Margin="10" BorderThickness="0" FontSize="24" HorizontalContentAlignment="Center" VerticalAlignment="Center" Text="{Binding CurrentCard.TextBack}" />
+                        <TextBox 
+                            Margin="10" 
+                            BorderThickness="0" 
+                            FontSize="24" 
+                            HorizontalContentAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            Text="{Binding CurrentCard.TextBack}" 
+                            TextWrapping="Wrap"/>
                     </Border>
                 </Grid>
                 

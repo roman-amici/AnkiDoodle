@@ -9,6 +9,8 @@ namespace AnkiDoodle.CardDesigner
 {
     internal partial class CardDesignBasic : ObservableObject
     {
+        public CardDesignBasic() { }
+
         public CardDesignBasic(long cardIndex)
         {
             CardIndex = cardIndex;
