@@ -8,7 +8,7 @@ namespace AnkiDoodle.Database.DbModel
 {
     public class CardOrder
     {
-        public uint Order { get; set; }
+        public long Order { get; set; }
         public long CardId { get; set; }
         public long DeckId { get; set; }
     }

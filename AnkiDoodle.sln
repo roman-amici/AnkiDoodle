@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnkiDoodle", "AnkiDoodle\An
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnkiDoodle.Database", "AnkiDoodle.Database\AnkiDoodle.Database.csproj", "{0B4EDF0B-42B3-4B03-84E2-33585897C60F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnkiDoodle.Database.Test", "AnkiDoodle.Database.Test\AnkiDoodle.Database.Test.csproj", "{E7E70844-5213-4B60-A893-4BA78AD3F2B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0B4EDF0B-42B3-4B03-84E2-33585897C60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B4EDF0B-42B3-4B03-84E2-33585897C60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B4EDF0B-42B3-4B03-84E2-33585897C60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7E70844-5213-4B60-A893-4BA78AD3F2B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7E70844-5213-4B60-A893-4BA78AD3F2B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7E70844-5213-4B60-A893-4BA78AD3F2B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E70844-5213-4B60-A893-4BA78AD3F2B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

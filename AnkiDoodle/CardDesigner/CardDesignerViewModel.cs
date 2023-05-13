@@ -22,9 +22,7 @@ namespace AnkiDoodle.CardDesigner
         [ObservableProperty]
         private string deckName = string.Empty;
 
-        private Deck? DeckInfo { get; set; }
-
-        public event EventHandler? OnCardAdded;
+        private Deck? OriginalDeck { get; set; }
 
         [RelayCommand]
         private void AddNewCard()
@@ -37,9 +35,6 @@ namespace AnkiDoodle.CardDesigner
             var card = new CardDesignBasic() { TextFront = "<New Card>" };
             DeckEdit.Add(card);
             CurrentCard = card;
-
-            OnCardAdded?.Invoke(this, new EventArgs());
-
         }
 
         [RelayCommand]
